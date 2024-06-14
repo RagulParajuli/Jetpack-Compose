@@ -1,6 +1,6 @@
 1. MainActivity: The main entry point of the Android application.
   - It extends 'ComponentActivity'.
-  - In the ## 'onCreate' method, it sets the content of the activity using a composable function 'Name'.
+  - In the 'onCreate' method, it sets the content of the activity using a composable function 'Name'.
   
 2. Name Composable Function: Defines the UI to be displayed.
   - Uses a 'Column' to arrange the elements vertically.
