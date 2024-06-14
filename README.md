@@ -14,3 +14,14 @@
 3. ImageCardPreview:
  - A preview function annotated with '@Preview' and '@RequiresApi(Build.VERSION_CODES.O)' to allow visualization of the 'ImageCard' in Android Studio.
  - It uses the same parameters to create an 'ImageCard' for the preview.
+
+<div style="background-color: #f9f9f9; padding: 10px; border: 1px solid #ccc;">
+ 
+** 4. Key Points:
+  - @RequiresApi: Ensures the code only runs on devices with the specified API level or higher.
+  - painterResource: Loads an image resource.
+  - Card: A composable that provides a card with customizable elevation and shape.
+  - Box: A composable that allows stacking its children.
+  - Image: Displays an image with various scaling options.
+  - Brush.verticalGradient: Creates a vertical gradient for the background.
+  - Text: Displays text with customizable style. **
