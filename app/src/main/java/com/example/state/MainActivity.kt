@@ -69,12 +69,23 @@ fun ColorBox(
 //               )
             updateColor(
                 Color(       // re-assigning the colors when clicked by redrawing the ColorBox
-                Random.nextFloat(),
-                Random.nextFloat(),
-                Random.nextFloat(),
-                1f
+                    Random.nextFloat(),
+                    Random.nextFloat(),
+                    Random.nextFloat(),
+                    1f
                 )
             )
         }
     )
+}
+@Preview(showBackground = true)
+@Composable
+fun ColorBoxPreview() {
+    Surface(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        ColorBox{
+            var color = it
+        }
+    }
 }
