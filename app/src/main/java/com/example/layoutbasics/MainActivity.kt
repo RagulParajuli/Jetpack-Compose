@@ -72,6 +72,8 @@ fun UserList(){
 //            UserCard()
 //        }
 //    }
+
+    // Use LazyColumn for efficient scrolling of large lists
     LazyColumn(){
         items(users){   user ->
             UserCard()
@@ -79,6 +81,7 @@ fun UserList(){
     }
 }
 
+// Composable function to display an individual user card
 @Composable
 fun UserCard(){
     Card {
@@ -95,6 +98,7 @@ fun UserCard(){
                 .border(width = 5.dp, color = Color.Black, shape = RectangleShape)
                 .padding(12.dp)
         ) {
+            // Display an image with circular clipping
             Image(
                 painter = painterResource(id = R.drawable.myimage),
                 contentDescription = "My Image",
@@ -103,6 +107,7 @@ fun UserCard(){
                     .size(120.dp)
                     .clip(CircleShape)
             )
+            // Column for text and button
             Column(modifier = Modifier.padding(15.dp)) {
                 Text(text = "Ragul Parajuli")
                 val context = LocalContext.current
@@ -120,7 +125,7 @@ fun UserCard(){
         }
     }
 }
-
+// Preview function to visualize the composable in Android Studio
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
