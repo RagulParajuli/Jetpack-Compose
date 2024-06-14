@@ -5,10 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -32,7 +29,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DiffColor()
+            TestTheme {
+                DiffColor()
+            }
+        }
     }
 }
 
@@ -40,7 +40,6 @@ class MainActivity : ComponentActivity() {
 fun DiffColor() {
     Column(
         modifier = Modifier
-
             .fillMaxHeight(0.5f)
             .fillMaxWidth()
             .padding(70.dp)
@@ -50,21 +49,29 @@ fun DiffColor() {
             .border(15.dp, Color.Blue)
             .padding(15.dp)
             .border(15.dp, Color.Red),
-//                    .padding(5.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-
     ) {
         Text(
-            text = "Ragul", modifier = Modifier
+            text = "Ragul",
+            modifier = Modifier
                 .offset(0.dp, 10.dp)
         )
         Spacer(modifier = Modifier.height(5.dp))
         Text(
-            text = "Parajuli", modifier = Modifier
+            text = "Parajuli",
+            modifier = Modifier
                 .offset(20.dp, 0.dp)
         )
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun DiffColorPreview() {
+    TestTheme {
+        Surface(modifier = Modifier.fillMaxSize()) {
+            DiffColor()
+        }
+    }
 }
-// Not written code to show in Design
